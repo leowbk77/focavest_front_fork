@@ -2,8 +2,11 @@ import '@mantine/core/styles.css';
 import '@mantine/carousel/styles.css';
 
 import React from 'react';
-import { ColorSchemeScript, MantineProvider } from '@mantine/core';
+import { Flex, ColorSchemeScript, MantineProvider } from '@mantine/core';
 import { theme } from '../theme';
+
+import { Footer } from '@/components/Home/components/Footer/Footer';
+import { Header } from '@/components/Home/components/Header/Header';
 
 export const metadata = {
   title: 'FocaVest',
@@ -12,7 +15,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: any }) {
   return (
-    <html lang="en">
+    <html lang="pt-br">
       <head>
         <ColorSchemeScript />
         <link rel="shortcut icon" href="/focavest.svg" />
@@ -22,7 +25,24 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <MantineProvider theme={theme}>
+          <Flex
+            direction={'column'}
+            w={390}
+            h={'100vh'}
+            align={'center'}
+            m={'auto'}
+            p={'xl'}
+            pos={'relative'}
+          >
+            <Header />
+            
+            {children}
+
+            <Footer />
+          </Flex>
+
+        </MantineProvider>
       </body>
     </html>
   );
