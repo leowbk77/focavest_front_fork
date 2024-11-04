@@ -1,10 +1,14 @@
 'use client'
 import { DailyActivities } from "@/components/Home/components/DailyActivities/DailyActivities";
 import { Flex, Text, Title } from '@mantine/core';
+import {DatePicker} from '@mantine/dates';
 import AgendaService from "@/service/agenda.service";
 import {useQuery} from '@tanstack/react-query';
+import { useState } from "react";
+import 'dayjs/locale/pt-br';
 
 export default function Calendario() {
+    const [dateValue, setDateValue] = useState<Date | null>(null);
 
     const {
         data,
@@ -17,7 +21,18 @@ export default function Calendario() {
 
     return (       
         <>
+            <Flex direction={'row'}>
+                <DatePicker 
+                    locale="pt-br"
+                    value={dateValue} 
+                    onChange={setDateValue}
+                    firstDayOfWeek={0}
+                    size="md"
+                />
+            </Flex>
+            
             <DailyActivities />
+
             <div>
                 <Flex direction={'column'}>
                     {data && (
