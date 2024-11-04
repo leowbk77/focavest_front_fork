@@ -13,7 +13,7 @@ const findAll = async (/*type: string*/) => {
 };
 
 const byDate = async (date: string) => {
-    const response = await http.get<AgendaProps[]>(`agendas/${date}`);
+    const response = await http.get<AgendaProps>(`agendas/${date}`);
     return response.data;
 };
 

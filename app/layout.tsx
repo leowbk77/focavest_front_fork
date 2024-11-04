@@ -8,12 +8,15 @@ import { theme } from '../theme';
 import { Footer } from '@/components/Home/components/Footer/Footer';
 import { Header } from '@/components/Home/components/Header/Header';
 
+import ReactQueryProvider from '@/utils/ReactQueryProvider';
+
 export const metadata = {
   title: 'FocaVest',
   description: 'I am using Mantine with Next.js!',
 };
 
 export default function RootLayout({ children }: { children: any }) {
+
   return (
     <html lang="pt-br">
       <head>
@@ -25,6 +28,7 @@ export default function RootLayout({ children }: { children: any }) {
         />
       </head>
       <body>
+        <ReactQueryProvider>
         <MantineProvider theme={theme}>
           <Flex
             direction={'column'}
@@ -41,8 +45,8 @@ export default function RootLayout({ children }: { children: any }) {
 
             <Footer />
           </Flex>
-
         </MantineProvider>
+        </ReactQueryProvider>
       </body>
     </html>
   );

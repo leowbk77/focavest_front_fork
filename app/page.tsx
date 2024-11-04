@@ -2,9 +2,13 @@ import { ColorSchemeToggle } from '../components/ColorSchemeToggle/ColorSchemeTo
 import { Home } from '../components/Home/Home';
 
 export default function HomePage() {
+  
+
   return (
     <>
-      <Home />
+    
+      <Home />  
+
     </>
   );
 }
