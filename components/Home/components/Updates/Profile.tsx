@@ -1,35 +1,40 @@
-import { Box, Flex, Text } from '@mantine/core';
+import Image from 'next/image';
+import { Flex, Text } from '@mantine/core';
 
-export function Profile() {
+interface Props {
+  name: string;
+  location: string;
+  date: string;
+  text: string;
+}
+
+export function Profile({ name, location, date, text }: Props) {
   return (
     <>
-      <Flex w={'100%'} direction={'row'} justify={'start'} align={'center'} pos={'relative'}>
-        <Box w={54} h={54} bg={'#D9D9D9'} style={{ borderRadius: 10 }} />
-        <Flex direction={'column'} p={'sm'}>
-          <Text size="14px" c={'#616E7D'} ff={'monospace'} fw={'bold'}>
-            @faculdade
+      <Flex direction="row" justify="start" align="center" pos="relative">
+        <Image
+          width={80}
+          height={60}
+          src={name === 'Ufu' ? '/ufu_logo.png' : '/unitri_logo.png'}
+          alt="Logo"
+        />
+        <Flex direction="column" p="sm">
+          <Text size="14px" c="#82BFAB" ff="monospace" fw="bold">
+            @{name}
           </Text>
-          <Text size="10px" c={'#616E7D'} ff={'monospace'} pt={'sm'}>
-            Uberlândia - MG
+          <Text size="10px" c="#82BFAB" ff="monospace" pt="sm">
+            {location}
           </Text>
         </Flex>
-        <Text
-          size="10px"
-          c={'#A6ADB5'}
-          ff={'monospace'}
-          pt={'sm'}
-          right={0}
-          bottom={15}
-          pos={'absolute'}
-        >
-          22/09/2024
+        <Text size="10px" c="#A6ADB5" ff="monospace" pt="sm" right={0} bottom={15} pos="absolute">
+          {date}
         </Text>
       </Flex>
-      <Text size='12px' p={'sm'} >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget tempus libero. Fusce
-        faucibus a felis ac euismod. Mauris facilisis a elit et cursus
-      </Text>
-      
+      <Flex w="100%">
+        <Text size="12px" p="sm">
+          {text}
+        </Text>
+      </Flex>
     </>
   );
 }
