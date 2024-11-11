@@ -1,12 +1,12 @@
-import { Carousel, CarouselProps, CarouselSlide } from '@mantine/carousel';
-import { Flex, Text, Title } from '@mantine/core';
+import { Carousel } from '@mantine/carousel';
+import { Flex, Title } from '@mantine/core';
 import { Task } from './Task';
 
 export function CarouselComponent() {
   return (
     <>
-      <Flex direction={'column'} align={'start'} w={'100%'} bg={'#616E7D'} p={'md'}>
-        <Title size={10} c={'white'} ff={'monospace'} pb={'md'}>
+      <Flex direction="column" align="start" bg="#82BFAB" p="md">
+        <Title size={10} c="white" ff="monospace" pb="md">
           Segunda - feira
         </Title>
         <Carousel
@@ -18,21 +18,21 @@ export function CarouselComponent() {
           slidesToScroll={3}
           w={296}
         >
-          <CarouselSlide>
-            <Task name="Task 1" hours="08:00 hrs" />
-          </CarouselSlide>
-          <CarouselSlide>
-            <Task name="Task 2" hours="09:10 hrs" />
-          </CarouselSlide>
-          <CarouselSlide>
-            <Task name="Task 3" hours="10:00 hrs" />
-          </CarouselSlide>
-          <CarouselSlide>
-            <Task name="Task 4" hours="10:50 hrs" />
-          </CarouselSlide>
-          <CarouselSlide>
-            <Task name="Task 5" hours="13:00 hrs" />
-          </CarouselSlide>
+          <Carousel.Slide>
+            <Task name="Acordar" hours="08:00 hrs" />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <Task name="Café da manhã" hours="09:10 hrs" />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <Task name="Estudar" hours="10:00 hrs" />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <Task name="Academia" hours="10:50 hrs" />
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <Task name="Almoço" hours="13:00 hrs" />
+          </Carousel.Slide>
         </Carousel>
       </Flex>
     </>

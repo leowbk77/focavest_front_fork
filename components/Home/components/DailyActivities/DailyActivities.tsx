@@ -1,16 +1,19 @@
-import { Flex, Text, Title } from '@mantine/core';
+import { Divider } from '@mantine/core';
 import { CarouselComponent } from './Carousel';
 
 export function DailyActivities() {
   return (
     <>
-      <Flex direction={'row'} align={'end'} w={'100%'} pb={'md'}>
-        <Title size={16} c={'#616E7D'} ff={'monospace'}>
-          Bem vindo(a)____________
-        </Title>
-        <Text size={'10px'} ff={'monospace'} pl={'sm'} c={'#616E7D'}>Atividades diárias</Text>
-      </Flex>
-      <CarouselComponent/>
+      <Divider
+        color="#616E7D"
+        variant="solid"
+        label="Bem vindo(a)"
+        labelPosition="left"
+        pb="sm"
+        ff="monospace"
+        fw="bold"
+      />
+      <CarouselComponent />
     </>
   );
 }

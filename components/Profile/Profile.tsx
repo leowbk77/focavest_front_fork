@@ -1,19 +1,19 @@
 import { Flex } from '@mantine/core';
 import { Footer } from '../Footer/Footer';
 import { Header } from '../Header/Header';
-import { DailyActivities } from './components/DailyActivities/DailyActivities';
-import { NextExams } from './components/NextExams/NextExams';
-import { Updates } from './components/Updates/Updates';
+import { ExamsSelected } from './components/ExamsSelected';
+import { NextExam } from './components/NextExam';
+import { ProfileInfo } from './components/ProfileInfo';
 
-export function Home() {
+export function Profile() {
   return (
     <>
       <Flex direction="column" w={390} align="center" m="auto" p="xl">
         <Header />
         <Flex direction="column" w="100%" pos="relative" pb={70}>
-          <DailyActivities />
-          <NextExams />
-          <Updates />
+          <ProfileInfo />
+          <NextExam />
+          <ExamsSelected />
         </Flex>
         <Footer />
       </Flex>
