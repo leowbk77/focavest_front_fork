@@ -7,18 +7,22 @@ import { theme } from '../theme';
 
 import '@mantine/carousel/styles.css';
 
+import { AppContextProvider } from '@/contexts/AppContext';
+
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <MantineProvider theme={theme}>
-      <Head>
-        <title>Focavest</title>
-        <meta
-          name="viewport"
-          content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
-        />
-        <link rel="shortcut icon" href="/focavest.svg" />
-      </Head>
-      <Component {...pageProps} />
+      <AppContextProvider>
+        <Head>
+          <title>Focavest</title>
+          <meta
+            name="viewport"
+            content="minimum-scale=1, initial-scale=1, width=device-width, user-scalable=no"
+          />
+          <link rel="shortcut icon" href="/focavest.svg" />
+        </Head>
+        <Component {...pageProps} />
+      </AppContextProvider>
     </MantineProvider>
   );
 }

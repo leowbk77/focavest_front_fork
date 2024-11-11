@@ -8,7 +8,7 @@ const findAll = async (/*type: string*/) => {
         return type === "desc" ? response.data.reverse() : response.data;
     }    
     */
-    const response = await http.get<AgendaProps[]>("agendas/");
+    const response = await http.get<AgendaProps[]>("agendas");
     return response.data;
 };
 

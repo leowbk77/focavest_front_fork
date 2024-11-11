@@ -1,3 +1,9 @@
+/* 
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    RAFAEL MUDOU O FORMATO DO ESTIMATED DURATION
+    ATUALIZAR SE FOR USAR OS DADOS 
+    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+ */
 export interface Task {
     subject: string;
     topic: string;
