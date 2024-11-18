@@ -8,7 +8,7 @@ import { Updates } from './components/Updates/Updates';
 export function Home() {
   return (
     <>
-      <Flex direction="column" w={390} align="center" m="auto" p="xl">
+      <Flex direction="column" w="100vw" align="center" m="auto" p="xl">
         <Header />
         <Flex direction="column" w="100%" pos="relative" pb={70}>
           <DailyActivities />
