@@ -12,7 +12,7 @@ function Loading() {
 export function CalendarHomepage() {
   return (
     <>
-      <Flex direction="column" w={390} align="center" m="auto" p="xl">
+      <Flex direction="column" w="100vw" align="center" m="auto" p="xl">
         <Header />
         <Suspense fallback={<Loading />}>
           <Flex direction="column" align="center" justify="center" pb={70}>
