@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { IconId, IconSettingsFilled } from '@tabler/icons-react';
 import { ActionIcon, Box, Flex } from '@mantine/core';
 
@@ -11,9 +12,11 @@ export function Header() {
           <ActionIcon color="white" aria-label="ID">
             <IconId color="#82BFAB" stroke={2} />
           </ActionIcon>
-          <ActionIcon color="white" aria-label="Settings">
-            <IconSettingsFilled color="#82BFAB" stroke={2} />
-          </ActionIcon>
+          <Link href="/" style={{ textDecoration: 'none' }}>
+            <ActionIcon color="white" aria-label="Settings">
+              <IconSettingsFilled color="#82BFAB" stroke={2} />
+            </ActionIcon>
+          </Link>
         </Box>
       </Flex>
     </>
