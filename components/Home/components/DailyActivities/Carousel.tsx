@@ -7,21 +7,12 @@ import { Task } from './Task';
 export function CarouselComponent() {
   const { agendas } = useAgenda();
 
-  // eslint-disable-next-line array-callback-return
-  // const today = agendas.map((agenda) => {
-  //   console.log(agenda.date);
-  //   console.log(new Date().toISOString().split('T')[0]);
-  // });
-  const todayTasks = [
-    { subject: 'Teste', topic: 'teste estudos', time: '09:00' },
-    { subject: 'Teste', topic: 'teste estudos', time: '09:00' },
-    { subject: 'Teste', topic: 'teste estudos', time: '09:00' },
-    { subject: 'Teste', topic: 'teste estudos', time: '09:00' },
-    { subject: 'Teste', topic: 'teste estudos', time: '09:00' },
-    { subject: 'Teste', topic: 'teste estudos', time: '09:00' },
-    { subject: 'Teste', topic: 'teste estudos', time: '09:00' },
-    { subject: 'Teste', topic: 'teste estudos', time: '09:00' },
-  ];
+  const todayTasks = agendas.filter((agenda) => {
+    const date = new Date().toISOString().split('T')[0];
+    return date === agenda.date;
+  });
+
+  console.log(todayTasks);
 
   // Obtém a data atual
   const dataAtual = new Date();
@@ -52,15 +43,16 @@ export function CarouselComponent() {
         <Carousel
           withIndicators
           height={100}
+          px="xl"
           slideSize="17%"
           slideGap="xs"
           align="start"
-          slidesToScroll={3}
+          slidesToScroll={1}
           w={296}
         >
-          {todayTasks.map((today, key) => (
-            <Carousel.Slide>
-              <Task name={today.topic} hours={today.time} />
+          {todayTasks[0]?.tasks.map((today, key) => (
+            <Carousel.Slide key={key}>
+              <Task name={today.subject} hours={today.time} />
             </Carousel.Slide>
           ))}
         </Carousel>
