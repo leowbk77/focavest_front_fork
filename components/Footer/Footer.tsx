@@ -10,7 +10,7 @@ import { ActionIcon, Flex, Text } from '@mantine/core';
 
 export function Footer() {
   return (
-    <Flex direction="row" pos="fixed" h={70} bottom={0} bg="white" p="xs">
+    <Flex direction="row" pos="fixed" h={70} w="100vw" bottom={0} bg="white" p="sm">
       <Link href="/" style={{ textDecoration: 'none', width: '78px' }}>
         <Flex direction="column" justify="center" align="center" px="sm">
           <ActionIcon variant="filled" color="#82BFAB" aria-label="Start">
